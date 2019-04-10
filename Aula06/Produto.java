@@ -21,6 +21,10 @@ public class Produto{
       return etiqueta;
    }
    
+   public String dadosDoProduto(){
+      return "Produto: " + getNome() + "\nPreço: " + getPreco() + "\nMarca: " + getEtiqueta().getMarca() + "\nTamanho: " + getEtiqueta().getTamanho();
+     }
+   
    public void setNome(String nome){
       this.nome = nome;
    }
