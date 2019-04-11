@@ -15,6 +15,10 @@ public class Etiqueta{
       return tamanho;
    }
    
+   public String getDados(){
+	   return "Etiqueta: \nMarca: " + marca + "Tamanho: " + tamanho
+   }
+   
    public void setMarca(String marca){
       this.marca = marca;
    }
