@@ -1,25 +1,21 @@
 public class Etiqueta{
-   private String marca;
    private String tamanho;
+   private Marca marca;
    
-   public Etiqueta(String marca, String tamanho){
-      setMarca(marca);
+   public Etiqueta(Marca marca, String tamanho){
+      this.marca = marca;
       setTamanho(tamanho);
    }   
-   
-   public String getMarca(){
-      return marca;
-   }
    
    public String getTamanho(){
       return tamanho;
    }
    
    public String getDados(){
-	   return "Etiqueta: \nMarca: " + marca + "Tamanho: " + tamanho
+	   return "Etiqueta: \n" + marca.getDados() + "\nTamanho: " + tamanho;
    }
    
-   public void setMarca(String marca){
+   public void setMarca(Marca marca){
       this.marca = marca;
    }
    
