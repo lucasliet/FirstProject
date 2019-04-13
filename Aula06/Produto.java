@@ -6,7 +6,7 @@ public class Produto{
    public Produto(String nome, double preco, Etiqueta etiqueta){
       setNome(nome);
       setPreco(preco);
-      this.etiqueta = etiqueta;
+      setEtiqueta(etiqueta);
    }
    
    public String getNome(){

@@ -4,9 +4,13 @@ public class TesteProduto{
    public static void main(String[] args){
       String nome = JOptionPane.showInputDialog("Digite o nome do produto");
       double preco = Double.parseDouble(JOptionPane.showInputDialog("Digite o preço do produto"));
+      String tamanho = JOptionPane.showInputDialog("Digite o tamanho do produto (P M G XG XXG)");
       String marca = JOptionPane.showInputDialog("Digite a marca do produto");
       String cnpj = JOptionPane.showInputDialog("Digite o CNPJ da marca");
-      String tamanho = JOptionPane.showInputDialog("Digite o tamanho do produto (P M G XG XXG)");
+      
+      while (cnpj.length() != 14){
+         cnpj = JOptionPane.showInputDialog("CNPJ Incorreto, digite novamente");
+      }
       
       Marca marca1 = new Marca(marca,cnpj);
       Etiqueta etiqueta1 = new Etiqueta(marca1, tamanho);
@@ -20,6 +24,5 @@ public class TesteProduto{
       etiqueta1.setTamanho(tamanho);
       
       JOptionPane.showMessageDialog(null,produto1.getDados());
-            
    }
 }

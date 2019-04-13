@@ -20,7 +20,7 @@ public class Marca{
    }
    
    public void setCNPJ(String cnpj){
-      this.cnpj = cnpj;
+      this.cnpj = cnpj;      
    }
    
    public String getDados(){
