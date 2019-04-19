@@ -1,28 +1,28 @@
 // Esta classe modela o caixa do "emporium". Ela deve receber o nome do
-// cliente e a lista de produtos (conteúdo do "carrinho").
+// cliente e a lista de produtos (conteÃºdo do "carrinho").
 
 public class Caixa
 {
-    // atributos: variáveis que armazenam os dados de um objeto, após este
+    // atributos: variÃ¡veis que armazenam os dados de um objeto, apÃ³s este
     // ser instanciado.
     private Cliente cliente;
     private Carrinho carrinho;
     
-    // método construtor: usado para inicializar os atributos,
-    // quando um objeto cliente é criado (instanciado). Notar que o construtor
-    // faz chamada interna de dois métodos modificadores.
+    // mÃ©todo construtor: usado para inicializar os atributos,
+    // quando um objeto cliente Ã© criado (instanciado). Notar que o construtor
+    // faz chamada interna de dois mÃ©todos modificadores.
     public Caixa(Cliente cliente, Carrinho novoCarrinho) {
         this.cliente = cliente;
         carrinho = novoCarrinho;
     }
-   // outros métodos
+   // outros mÃ©todos
     
     /*
-     * O método abaixo imprime os dados do cliente e a lista de 
-     * compras (conteúdo do "carrinho"). O nome do cliente (retornado pelo
-     * método getNome() ) e a lista de produtos comprados pelo cliente 
-     * (retornados pelo método listaDeProdutos() ) são concatenados em uma 
-     * String. Em seguida, o conteúdo da String é impresso.
+     * O mÃ©todo abaixo imprime os dados do cliente e a lista de 
+     * compras (conteÃºdo do "carrinho"). O nome do cliente (retornado pelo
+     * mÃ©todo getNome() ) e a lista de produtos comprados pelo cliente 
+     * (retornados pelo mÃ©todo listaDeProdutos() ) sÃ£o concatenados em uma 
+     * String. Em seguida, o conteÃºdo da String Ã© impresso.
      */
     
     public String imprimirCompra()

@@ -1,20 +1,20 @@
-// Esta classe modela o cliente que ir· fazer compras no "emporium".
+// Esta classe modela o cliente que ir√° fazer compras no "emporium".
 
 public class Cliente
 {
-    // atributos: armazenam os dados de um objeto, apÛs este ser instanciado.
+    // atributos: armazenam os dados de um objeto, ap√≥s este ser instanciado.
     private String nome;
     private String cpf;
     
-    // mÈtodo construtor: usado para inicializar os atributos,
-    // quando um objeto cliente È criado (instanciado). Notar que o construtor
-    // faz chamada interna de dois mÈtodos modificadores. 
+    // m√©todo construtor: usado para inicializar os atributos,
+    // quando um objeto cliente √© criado (instanciado). Notar que o construtor
+    // faz chamada interna de dois m√©todos modificadores. 
     public Cliente(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
     }
     
-    // mÈtodos de acesso: usados para retornar o valor de um atributo.
+    // m√©todos de acesso: usados para retornar o valor de um atributo.
     public String getNome() {
         return nome;
     }
@@ -22,7 +22,7 @@ public class Cliente
       return this.cpf;
     }
         
-    // mÈtodos modificadores: usados para alterar o valor de um atributo,
+    // m√©todos modificadores: usados para alterar o valor de um atributo,
     // depois que o objeto foi criado (instanciado).
     public void setNome(String novoNome) {
         nome = novoNome;

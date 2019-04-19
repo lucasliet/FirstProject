@@ -2,15 +2,15 @@
 
 public class Produto
 {
-    // atributos: vari·veis que armazenam os dados de um objeto, apÛs este
+    // atributos: vari√°veis que armazenam os dados de um objeto, ap√≥s este
     // ser instanciado.
     private String nome;
     private double precoUnitario; // em reais
     private double quantidade; // em quilogramas
     
-    // mÈtodo construtor: usado para inicializar os atributos,
-    // quando um objeto cliente È criado (instanciado). Notar que o construtor
-    // faz chamada interna de dois mÈtodos modificadores.
+    // m√©todo construtor: usado para inicializar os atributos,
+    // quando um objeto cliente √© criado (instanciado). Notar que o construtor
+    // faz chamada interna de dois m√©todos modificadores.
     public Produto(String novoNome, double precoUnitario, double quantidade)
     {
         this.nome = novoNome;
@@ -18,7 +18,7 @@ public class Produto
         setQuantidade(quantidade);
     }
     
-    // mÈtodos de acesso: usados para retornar o valor de um atributo.
+    // m√©todos de acesso: usados para retornar o valor de um atributo.
     public String getNome()
     {
         return nome;
@@ -34,7 +34,7 @@ public class Produto
         return quantidade;
     }
     
-    // mÈtodos modificadores: usados para alterar o valor de um atributo,
+    // m√©todos modificadores: usados para alterar o valor de um atributo,
     // depois que o objeto foi criado (instanciado).
     public void setNome(String novoNome)
     {
@@ -67,10 +67,10 @@ public class Produto
     }
     
  
-    // outros mÈtodos
+    // outros m√©todos
     
-    // O mÈtodo abaixo retorna uma String, que contÈm os valores dos
-    // atributos do objeto, mais a quantidade vezes o preÁo unit·rio.
+    // O m√©todo abaixo retorna uma String, que cont√©m os valores dos
+    // atributos do objeto, mais a quantidade vezes o pre√ßo unit√°rio.
     public String gastoComProduto()
     {
         return "Produto: " + nome + "   " + 
