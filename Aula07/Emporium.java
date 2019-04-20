@@ -6,7 +6,7 @@ public class Emporium {
       System.out.println(p2.gastoComProduto());  */
       
       Carrinho car = new Carrinho ();
-      car.colocarProdutoNoCarrinho("Banana", 0.99, 2);
+      car.colocarProdutoNoCarrinho("Banana", 0.99, 50);
       car.colocarProdutoNoCarrinho("Laranja", 2.4, 3);
       
       //System.out.println(car.listaDeProdutos());
@@ -17,7 +17,7 @@ public class Emporium {
       Caixa cx = new Caixa(cli, car);
       System.out.println(cx.imprimirCompra());
       
-      /* Produto p = car.removeProdutoDoCarrinho(0); //Removeu produto na primeira posição do arraylist e atribuiu a p
+      /* Produto p = car.removeProdutoDoCarrinho(0); //Removeu produto na primeira posiÃ§Ã£o do arraylist e atribuiu a p
       System.out.println("produto removido: \n " + p.gastoComProduto()); */
       
    }

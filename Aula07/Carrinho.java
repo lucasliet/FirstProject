@@ -4,25 +4,25 @@ import java.util.ArrayList; // importa a classe ArrayList
 
 public class Carrinho
 {
-    // atributos: variáveis que armazenam os dados de um objeto, após este
+    // atributos: variÃ¡veis que armazenam os dados de um objeto, apÃ³s este
     // ser instanciado.
     private ArrayList <Produto> produtosEscolhidos;
 
-    // métodos construtores: usado para inicializar os atributos,
-    // quando um objeto cliente é criado (instanciado). Notar que o construtor
-    // faz chamada interna de dois métodos modificadores.
+    // mÃ©todos construtores: usado para inicializar os atributos,
+    // quando um objeto cliente Ã© criado (instanciado). Notar que o construtor
+    // faz chamada interna de dois mÃ©todos modificadores.
     public Carrinho()
     {
         produtosEscolhidos = new ArrayList<>(400);
     }
 
-    // outros métodos
+    // outros mÃ©todos
     
     /*
-     * Este método deve ser executado uma vez para cada produto colocado 
+     * Este mÃ©todo deve ser executado uma vez para cada produto colocado 
      * no carrinho.
-     * Para cada produto, escrever o nome (exemplo: "arroz"), o preço 
-     * unitário por kg (em reais) e a quantidade de produto (em kg).
+     * Para cada produto, escrever o nome (exemplo: "arroz"), o preÃ§o 
+     * unitÃ¡rio por kg (em reais) e a quantidade de produto (em kg).
      */
     
     public void colocarProdutoNoCarrinho(String nomeProduto, double precoProduto, 
@@ -31,14 +31,14 @@ public class Carrinho
         Produto novoProduto = new Produto(nomeProduto, precoProduto, quantidadeProduto);
         produtosEscolhidos.add(novoProduto);
     }
-    /*remover um produto de uma posição e devolver o produto*/
+    /*remover um produto de uma posiÃ§Ã£o e devolver o produto*/
     public Produto removeProdutoDoCarrinho(int posicao){ 
          return produtosEscolhidos.remove(posicao);
     }  
     /* 
-    * Este método percorre a Lista de Produtos, armazenada em um ArrayList. Colhe os valores dos atributos 
+    * Este mÃ©todo percorre a Lista de Produtos, armazenada em um ArrayList. Colhe os valores dos atributos 
     * de cada objeto da lista e os concatena numa String (saida). Calcula 
-    * também o total em reais gasto nas compras, concatenando-o na mesma 
+    * tambÃ©m o total em reais gasto nas compras, concatenando-o na mesma 
     * String. Depois, retorna essa String.
     */
     
@@ -57,8 +57,8 @@ public class Carrinho
         if (getPeso() > 50)
         {
             double desconto = soma * 0.12;
-            soma -= desconto; 
-            saida+= soma + " Desconto de 12%, Você economizou: " + desconto + " Peso total: " + getPeso();
+            soma = soma - desconto; 
+            saida+= soma + " Desconto de 12%, Voce economizou: R$ " + desconto + " Peso total: " + getPeso() + "kg";
         }
         else
         {
