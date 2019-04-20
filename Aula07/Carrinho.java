@@ -57,7 +57,7 @@ public class Carrinho
         if (getPeso() > 50)
         {
             double desconto = soma * 0.12;
-            soma = soma - desconto; 
+            soma -= desconto; 
             saida+= soma + " Desconto de 12%, Você economizou: " + desconto + " Peso total: " + getPeso();
         }
         else
