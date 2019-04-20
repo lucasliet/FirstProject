@@ -32,9 +32,8 @@ public class Carrinho
         produtosEscolhidos.add(novoProduto);
     }
     /*remover um produto de uma posição e devolver o produto*/
-    public Produto removeProdutoDoCarrinho(int posicao){
-         Produto p = produtosEscolhidos.remove(posicao);
-         return p;
+    public Produto removeProdutoDoCarrinho(int posicao){ 
+         return produtosEscolhidos.remove(posicao);
     }  
     /* 
     * Este método percorre a Lista de Produtos, armazenada em um ArrayList. Colhe os valores dos atributos 
@@ -54,8 +53,28 @@ public class Carrinho
             saida += produto.gastoComProduto();
             soma += produto.getQuantidade() * produto.getPrecoUnitario();
         }
-        saida += "\n\nTotal a Pagar: R$ " + soma;
+        saida += "\n\nTotal a Pagar: R$ ";
+        if (getPeso() > 50)
+        {
+            double desconto = soma * 0.12;
+            soma = soma - desconto; 
+            saida+= soma + " Desconto de 12%, Você economizou: " + desconto + " Peso total: " + getPeso();
+        }
+        else
+        {
+            saida+= soma + " Peso total: " + getPeso();
+        }
         return saida;
       
+    }
+    public double getPeso()
+    {
+      double peso = 0.0;
+      
+      for ( Produto produto: produtosEscolhidos )
+      {
+          peso+= produto.getQuantidade();
+      }
+      return peso;
     }
 }
