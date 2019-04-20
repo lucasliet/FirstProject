@@ -4,12 +4,12 @@ import java.util.ArrayList; // importa a classe ArrayList
 
 public class Carrinho
 {
-    // atributos: variÃ¡veis que armazenam os dados de um objeto, apÃ³s este
+    // atributos: variaveis que armazenam os dados de um objeto, apos este
     // ser instanciado.
     private ArrayList <Produto> produtosEscolhidos;
 
-    // mÃ©todos construtores: usado para inicializar os atributos,
-    // quando um objeto cliente Ã© criado (instanciado). Notar que o construtor
+    // todos construtores: usado para inicializar os atributos,
+    // quando um objeto cliente e criado (instanciado). Notar que o construtor
     // faz chamada interna de dois mÃ©todos modificadores.
     public Carrinho()
     {
