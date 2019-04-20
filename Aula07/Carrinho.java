@@ -62,7 +62,7 @@ public class Carrinho
         }
         else
         {
-            saida+= soma + " Peso total: " + getPeso();
+            saida+= soma + " Peso total: " + getPeso() + "kg";
         }
         return saida;
       
