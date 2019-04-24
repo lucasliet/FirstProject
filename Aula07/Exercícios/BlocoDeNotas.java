@@ -29,10 +29,11 @@ public class BlocoDeNotas{
       return false;
    }
    
-   public String imprimir(){
+   public String toString(){
       String saida = "";
       int posicao = 1;
-      for (String nota:notas){
+      for(int i = 0; i < notas.size(); i++){    
+         String nota = notas.get(i); 
          saida +="\nNota "+posicao+"\n["+nota+"]";
          posicao++;
       }
