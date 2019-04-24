@@ -8,14 +8,24 @@ public class Rede{
       amigos.add(amigo);
    }
    public int buscar(String nome){
-      for(int i = 0; i < amigos.size(); i++){    //amigoS Ã© a arraylist de amigo
+      for(int i = 0; i < amigos.size(); i++){    //amigoS é a arraylist de amigo  //o for normal foi usado pra retornar a posição do objeto
          Amigo amigo = amigos.get(i);           //objeto amigo, recebe o objeto da arraylist
          String nomeAmigo = amigo.getNome();   //uma string chamada nomeAmigo recebne o nome do objeto anterior
-         if(nome.equals(nomeAmigo)){          //checa se o nome que o usuÃ¡rio digitou Ã© igual ao nome do objeto anterior
+         if(nome.equals(nomeAmigo)){          //checa se o nome que o usuário digitou é igual ao nome do objeto anterior
             return i;
          }
       }
+      /*
+      for(Amigo amigo:amigos){                  //outra forma de uso
+         if(amigo.getNome().equals(nome){
+            return indexOf(amigo);
+         }
+      } 
+      */
       return -1;//nao achou
+    
+    
+
    }
 
    public boolean blockAmigo(String nome){

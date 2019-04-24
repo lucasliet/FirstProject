@@ -29,7 +29,7 @@ public class Teste{
          else if(menu == 3){
             nome = JOptionPane.showInputDialog("Nome para"+
                " procurar:");
-            int posicao = rede.procurarAmigo(nome);
+            int posicao = rede.buscar(nome);
             if(posicao >= 0){
                JOptionPane.showMessageDialog(null, "Encontrado em "
                   +posicao);

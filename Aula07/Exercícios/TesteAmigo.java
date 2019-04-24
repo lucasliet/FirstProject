@@ -1,7 +1,7 @@
 public class TesteAmigo {
    public static void main (String args []){
       Amigo imaginario = new Amigo ();
-      System.out.println(imaginario);
+      System.out.println(imaginario); //o metodo "toString()" ja é chamado por padrão
       imaginario.setNome("Gal");
       imaginario.setSexo("fem");
       imaginario.setIdade(56);
