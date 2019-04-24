@@ -31,8 +31,10 @@ public class BlocoDeNotas{
    
    public String imprimir(){
       String saida = "";
+      int posicao = 1;
       for (String nota:notas){
-         saida +="\n["+nota+"]";
+         saida +="\nNota "+posicao+"\n["+nota+"]";
+         posicao++;
       }
       return saida;
    }
