@@ -4,9 +4,6 @@ public class Rede{
    public Rede(){
       amigos = new ArrayList<Amigo>();
    }
-   public void addAmigo(Amigo amigo){
-      amigos.add(amigo);
-   }
    public int buscar(String nome){
       for(int i = 0; i < amigos.size(); i++){    //amigoS é a arraylist de amigo  //o for normal foi usado pra retornar a posição do objeto
          Amigo amigo = amigos.get(i);           //objeto amigo, recebe o objeto da arraylist
@@ -25,7 +22,7 @@ public class Rede{
       return -1;//nao achou
     
     
-
+   
    }
 
    public boolean blockAmigo(String nome){
@@ -77,6 +74,9 @@ public class Rede{
       }
       return velhos;
    }
+   public void addAmigo(Amigo amigo){                           //"Sobrecarga" quando há dois métodos iguais instanciados de forma diferente, o programa detecta automaticamente pelos parametros
+      amigos.add(amigo);                                        
+   }
    public void addAmigo(String nome, String sexo, int idade){
       Amigo amigo = new Amigo();
       amigo.setNome(nome);
@@ -87,7 +87,7 @@ public class Rede{
    }
    public void listarAmigos(){
       for(Amigo amigo:amigos){
-         System.out.println(amigo);
+         System.out.println(amigo);   //puxando o toString()
       }
    }
 }
