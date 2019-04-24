@@ -14,8 +14,8 @@ public class Rede{
       }
       /*
       for(Amigo amigo:amigos){                  //outra forma de uso
-         if(amigo.getNome().equals(nome){
-            return indexOf(amigo);
+         if(amigo.getNome().equals(nome)){
+            return amigos.indexOf(amigo);
          }
       } 
       */
