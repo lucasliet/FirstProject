@@ -6,24 +6,24 @@ public class Teste {
    public static void main(String[] args) {
       Connection conn = null;
       Cliente cl;
-      Vendedor vd;
+      //Vendedor vd;
    
       try {
       	// obtem conexao com o banco
          ConexaoBD bd = new ConexaoBD();
          conn = bd.conectar();
-         vd = new Vendedor();
+         //vd = new Vendedor();
       
-      	// *** IMPORTANTE ***: Força o uso de transação.
+      	// *** IMPORTANTE ***: Forca o uso de transacao.
          conn.setAutoCommit(false);
       	// *** Inclusao do Primeiro Cliente ***
-         cl = new Cliente(1001, "Zé das Couves", "1127991999");
+         cl = new Cliente(1001, "Ze das Couves", "1127991999");
          cl.incluir(conn);
       
       	// *** Inclusao do Segundo Cliente ***
          cl = new Cliente();
          cl.setIdCliente(1002);
-         cl.setNome("João das Couves");
+         cl.setNome("Joao das Couves");
          cl.setFone("1160606161");
          cl.incluir(conn);
       
@@ -31,12 +31,12 @@ public class Teste {
          cl = new Cliente(1003, "Maria das Couves", "1121212121");
          cl.incluir(conn);
       
-      	// *** IMPORTANTE ***: Efetiva inclusões
+      	// *** IMPORTANTE ***: Efetiva inclusoes
          conn.commit();
          
          // *** Lista todos os clientes
          System.out.println("\nLista todos os clientes");
-         vd.listarClientes(conn);
+         //vd.listarClientes(conn);
       
       	// *** Carregar o cliente 1003 a partir do bd ***
          cl = new Cliente(1003);
@@ -53,7 +53,7 @@ public class Teste {
          
          // *** Lista novamente todos os clientes
          System.out.println("\nLista todos os clientes depois de apagar o 1003");
-         vd.listarClientes(conn);
+         //vd.listarClientes(conn);
       } 
       catch (Exception e) {
          e.printStackTrace();

@@ -104,10 +104,8 @@ public class Cliente {
          }
       } 
    }
-
    public void carregar(Connection conn) {
-      String sqlSelect = 
-         "SELECT * FROM cliente WHERE cliente.id = ?";
+      String sqlSelect = "SELECT * FROM cliente WHERE cliente.id = ?";
    
       try (PreparedStatement stm = conn.prepareStatement(sqlSelect);){
          stm.setInt(1, getIdCliente());
@@ -132,7 +130,6 @@ public class Cliente {
    } 
    
    public String toString() {
-      return "Cliente [idCliente=" + idCliente + ", nome=" + nome + ", fone="
-         	+ fone + "]";
+      return "Cliente [idCliente=" + idCliente + ", nome=" + nome + ", fone="	+ fone + "]";
    }
 }

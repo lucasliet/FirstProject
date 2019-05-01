@@ -19,9 +19,7 @@ public class ConexaoBD {
       String database = "tutorial";
       String usuario = "Alunos";
       String senha = "alunos";
-      return DriverManager
-         	.getConnection("jdbc:mysql://"+servidor+":"+porta+
-            "/"+database+"?user="+usuario+"&password="+senha);
+      return DriverManager.getConnection("jdbc:mysql://"+servidor+":"+porta+"/"+database+"?user="+usuario+"&password="+senha);
    }
 
    public static void desconectar(Connection conn) throws SQLException {
