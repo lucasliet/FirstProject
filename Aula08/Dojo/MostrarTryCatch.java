@@ -15,7 +15,7 @@ public class MostrarTryCatch{
          JOptionPane.showMessageDialog(null, "Digite apenas numeros");
       }
       catch (ArithmeticException ae) {
-         JOptionPane.showMessageDialog(null, "Não existe divisão por zero");
+         JOptionPane.showMessageDialog(null, "nao existe divisao por zero");
       }
       JOptionPane.showMessageDialog(null, "Obrigado, volte Sempre.");
    }   

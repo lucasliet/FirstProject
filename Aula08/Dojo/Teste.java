@@ -48,12 +48,15 @@ public class Teste {
       	// *** Excluir o cliente 1003 (carregado em cl) do bd
          cl.excluir(conn);
       
-      	// *** IMPORTANTE ***: Efetiva exclus√£o
+      	// *** IMPORTANTE ***: Efetiva exclus„o
          conn.commit();
          
          // *** Lista novamente todos os clientes
          System.out.println("\nLista todos os clientes depois de apagar o 1003");
          //vd.listarClientes(conn);
+         
+         Cliente cc= new Cliente(14);
+         cc.listarPedidos(conn);      
       } 
       catch (Exception e) {
          e.printStackTrace();

@@ -29,4 +29,3 @@ INSERT INTO pedido VALUES
 (1404, '2015-10-05', 12.01, 14);
 
 SELECT * from CLIENTE C, PEDIDO P WHERE C.id = P.id_cliente;
-

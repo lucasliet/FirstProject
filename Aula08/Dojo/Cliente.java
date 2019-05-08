@@ -132,4 +132,29 @@ public class Cliente {
    public String toString() {
       return "Cliente [idCliente=" + idCliente + ", nome=" + nome + ", fone="	+ fone + "]";
    }
+   
+   public void listarPedidos(Connection conn){
+      String consulta = "SELECT * FROM pedido WHERE id_cliente = ?";
+      try (PreparedStatement stm = conn.prepareStatement(consulta);){
+         stm.setInt(1, getIdCliente());
+         try (ResultSet rs = stm.executeQuery();){
+            while(rs.next()){
+               Pedido p = new Pedido();
+               
+               p.setId(rs.getInt(1));
+               p.setData(rs.getDate(2));
+               p.setValor(rs.getDouble(3));
+               
+               System.out.println(p);
+            }
+         }
+         catch (Exception e1){
+            e1.printStackTrace();
+         }
+         
+      }
+         catch (Exception e2){
+            e2.printStackTrace();
+         }
+   }
 }
