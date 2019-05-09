@@ -28,4 +28,4 @@ INSERT INTO pedido VALUES
 (1403, '2015-10-05', 38.90, 14),
 (1404, '2015-10-05', 12.01, 14);
 
-SELECT * from CLIENTE C, PEDIDO P WHERE C.id = P.id_cliente;
+SELECT * FROM CLIENTE C JOIN PEDIDO P ON C.id = P.id_cliente;

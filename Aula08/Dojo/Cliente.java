@@ -8,37 +8,48 @@ public class Cliente {
    private int idCliente;
    private String nome;
    private String fone;
+   
    public Cliente(){
    }
+   
    public Cliente(int idCliente) {
       this.idCliente = idCliente;
    }
+   
    public Cliente(int idCliente, String nome, String fone) {
       this.idCliente = idCliente;
       this.nome = nome;
       this.fone = fone;
    }
+   
    public int getIdCliente() {
       return idCliente;
    }
+   
    public void setIdCliente(int idCliente) {
       this.idCliente = idCliente;
    }
+   
    public String getNome() {
       return nome;
    }
+   
    public void setNome(String nome) {
       this.nome = nome;
    }
+   
    public String getFone() {
       return fone;
    }
+   
    public void setFone(String fone) {
       this.fone = fone;
    }
+   
    public String toString() {
       return "Cliente [idCliente=" + idCliente + ", nome=" + nome + ", fone="+ fone + "]";
    }
+   
    public void incluir(Connection conn) {
       String sqlInsert = 
          "INSERT INTO cliente(id, nome, fone) VALUES (?, ?, ?)";
@@ -59,6 +70,7 @@ public class Cliente {
          }
       } 
    }
+   
    public void excluir(Connection conn) {
       String sqlDelete = "DELETE FROM cliente WHERE id = ?";
       
@@ -76,6 +88,7 @@ public class Cliente {
          }
       } 
    }
+   
    public void atualizarTelefone(Connection conn, String novoFone) {
       String sqlUpdate = 
       "UPDATE CLIENTE SET FONE = ? WHERE ID = ?";
@@ -95,6 +108,7 @@ public class Cliente {
          }
       } 
    }
+   
    public void carregar(Connection conn) {
       String sqlSelect = 
          "SELECT * FROM cliente WHERE cliente.id = ?";
@@ -118,6 +132,7 @@ public class Cliente {
          System.out.print(e1.getStackTrace());
       }
    }
+   
    public ArrayList<Pedido> carregarPedidos(Connection conn) {
 		String sqlSelect = "SELECT id, data, valor FROM pedido WHERE id_cliente = ?";
 		ArrayList<Pedido> lista = new ArrayList<>();
@@ -148,7 +163,8 @@ public class Cliente {
 		}
 		return lista;
 	}
-	public String listaDePedidos(Connection conn){
+	
+   public String listaDePedidos(Connection conn){
       ArrayList<Pedido> pedidos = carregarPedidos(conn);
 		String listagem = "";
 		for(Pedido pedido: pedidos){

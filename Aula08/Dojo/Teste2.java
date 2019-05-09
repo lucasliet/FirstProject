@@ -49,6 +49,9 @@ public class Teste2 {
          System.out.println(novo.listaDePedidos(conn));
          
          conn.commit();
+         
+         Vendedor lista = new Vendedor();
+         System.out.println(lista.listarClientes(conn));
                 
        } 
       catch (Exception e) {
