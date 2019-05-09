@@ -8,49 +8,42 @@ public class Cliente {
    private int idCliente;
    private String nome;
    private String fone;
-
    public Cliente(){
    }
-
    public Cliente(int idCliente) {
       this.idCliente = idCliente;
    }
-
    public Cliente(int idCliente, String nome, String fone) {
       this.idCliente = idCliente;
       this.nome = nome;
       this.fone = fone;
    }
-
    public int getIdCliente() {
       return idCliente;
    }
-
    public void setIdCliente(int idCliente) {
       this.idCliente = idCliente;
    }
-
    public String getNome() {
       return nome;
    }
-
    public void setNome(String nome) {
       this.nome = nome;
    }
-
    public String getFone() {
       return fone;
    }
-
    public void setFone(String fone) {
       this.fone = fone;
    }
-
+   public String toString() {
+      return "Cliente [idCliente=" + idCliente + ", nome=" + nome + ", fone="+ fone + "]";
+   }
    public void incluir(Connection conn) {
       String sqlInsert = 
          "INSERT INTO cliente(id, nome, fone) VALUES (?, ?, ?)";
-   
-      try (PreparedStatement stm = conn.prepareStatement(sqlInsert);) {
+      
+	  try (PreparedStatement stm = conn.prepareStatement(sqlInsert);) {
          stm.setInt(1, getIdCliente());
          stm.setString(2, getNome());
          stm.setString(3, getFone());
@@ -66,12 +59,11 @@ public class Cliente {
          }
       } 
    }
-
    public void excluir(Connection conn) {
       String sqlDelete = "DELETE FROM cliente WHERE id = ?";
-      try (PreparedStatement stm = conn.prepareStatement(sqlDelete);) {
-         stm.setInt(1, getIdCliente());
       
+	  try (PreparedStatement stm = conn.prepareStatement(sqlDelete);) {
+         stm.setInt(1, getIdCliente());
          stm.execute();
       } 
       catch (Exception e) {
@@ -84,14 +76,13 @@ public class Cliente {
          }
       } 
    }
-	
    public void atualizarTelefone(Connection conn, String novoFone) {
-      String sqlUpdate = "UPDATE CLIENTE SET FONE = ? WHERE ID = ?";
+      String sqlUpdate = 
+      "UPDATE CLIENTE SET FONE = ? WHERE ID = ?";
     
       try (PreparedStatement stm = conn.prepareStatement(sqlUpdate);){
          stm.setString(1, novoFone);
          stm.setInt(2, getIdCliente());
-      
          stm.execute();
       } 
       catch (Exception e) {
@@ -105,20 +96,19 @@ public class Cliente {
       } 
    }
    public void carregar(Connection conn) {
-      String sqlSelect = "SELECT * FROM cliente WHERE cliente.id = ?";
+      String sqlSelect = 
+         "SELECT * FROM cliente WHERE cliente.id = ?";
    
       try (PreparedStatement stm = conn.prepareStatement(sqlSelect);){
          stm.setInt(1, getIdCliente());
          try (ResultSet rs = stm.executeQuery();){
-         /*este outro try e' necessario pois nao da' para abrir o resultset
+         /*este outro try e necessario pois nao da para abrir o resultset
           *no anterior uma vez que antes era preciso configurar o parametro
-          *via setInt; se nao fosse, poderia se fazer tudo no mesmo try
-          */
+          *via setInt; se nao fosse, poderia se fazer tudo no mesmo try */
             if (rs.next()) {
                this.setNome(rs.getString(2));
                this.setFone(rs.getString(3));
             }
-         
          } 
          catch (Exception e) {
             e.printStackTrace();
@@ -127,34 +117,43 @@ public class Cliente {
       catch (SQLException e1) {
          System.out.print(e1.getStackTrace());
       }
-   } 
-   
-   public String toString() {
-      return "Cliente [idCliente=" + idCliente + ", nome=" + nome + ", fone="	+ fone + "]";
    }
-   
-   public void listarPedidos(Connection conn){
-      String consulta = "SELECT * FROM pedido WHERE id_cliente = ?";
-      try (PreparedStatement stm = conn.prepareStatement(consulta);){
-         stm.setInt(1, getIdCliente());
-         try (ResultSet rs = stm.executeQuery();){
-            while(rs.next()){
-               Pedido p = new Pedido();
-               
-               p.setId(rs.getInt(1));
-               p.setData(rs.getDate(2));
-               p.setValor(rs.getDouble(3));
-               
-               System.out.println(p);
-            }
-         }
-         catch (Exception e1){
-            e1.printStackTrace();
-         }
-         
-      }
-         catch (Exception e2){
-            e2.printStackTrace();
-         }
-   }
+   public ArrayList<Pedido> carregarPedidos(Connection conn) {
+		String sqlSelect = "SELECT id, data, valor FROM pedido WHERE id_cliente = ?";
+		ArrayList<Pedido> lista = new ArrayList<>();
+		
+		try (PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			stm.setInt(1, getIdCliente());
+			try (ResultSet rs = stm.executeQuery();) {
+				/*
+				 * este outro try e' necessario pois nao da' para abrir o
+				 * resultsetno anterior uma vez que antes era preciso configurar
+				 * o parametrovia setInt; se nao fosse, poderia se fazer tudo no
+				 * mesmo try
+				 */
+				while (rs.next()) {
+					Pedido p = new Pedido();
+					p.setId(rs.getInt("id"));
+					p.setData(rs.getDate("data"));
+					p.setValor(rs.getDouble("valor"));
+					lista.add(p);
+				}
+			} 
+         catch (Exception e) {
+				e.printStackTrace();
+			}
+		} 
+      catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return lista;
+	}
+	public String listaDePedidos(Connection conn){
+      ArrayList<Pedido> pedidos = carregarPedidos(conn);
+		String listagem = "";
+		for(Pedido pedido: pedidos){
+			listagem += pedido.toString() + "\n";
+		}
+		return listagem;
+	}
 }
