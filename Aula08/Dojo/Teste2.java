@@ -51,7 +51,8 @@ public class Teste2 {
          conn.commit();
          
          Vendedor lista = new Vendedor();
-         System.out.println(lista.listarClientes(conn));
+		 lista.carregar(conn);
+         System.out.println(lista);
                 
        } 
       catch (Exception e) {

@@ -11,7 +11,7 @@ public class Vendedor{
       lista = new ArrayList<>();
    }
    
-   public void listarClientes(Connection conn) {
+   public void carregar(Connection conn) {
 		String sqlSelect = "SELECT id, nome, fone FROM cliente";
       
 		try (PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
