@@ -1,0 +1,43 @@
+  ----jGRASP exec: java Teste2
+ Wed May 15 03:20:19 BRT 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+ Pedido [id=1401, data=2015-10-01, valor=1045.77]
+ Pedido [id=1401, data=2018-05-08, valor=1000.0]
+ Cliente [idCliente=1010, nome=Ze dos Pedidos, fone=1199995678]
+ Pedido [id=1, data=2018-05-02, valor=100.5]
+ Pedido [id=2, data=2018-05-03, valor=758.61]
+ 
+ Cliente [idCliente=14, nome=Adriano Arruda, fone=1322444422]
+ Cliente [idCliente=1010, nome=Ze dos Pedidos, fone=1199995678]
+ 
+ Wed May 15 03:20:20 BRT 2019 WARN: Caught while disconnecting...
+ 
+ EXCEPTION STACK TRACE:
+ 
+ 
+ 
+ ** BEGIN NESTED EXCEPTION ** 
+ 
+ javax.net.ssl.SSLException
+ MESSAGE: closing inbound before receiving peer's close_notify
+ 
+ STACKTRACE:
+ 
+ javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+ 	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:133)
+ 	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:117)
+ 	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:307)
+ 	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:263)
+ 	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:254)
+ 	at java.base/sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:650)
+ 	at java.base/sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:629)
+ 	at com.mysql.jdbc.MysqlIO.quit(MysqlIO.java:2249)
+ 	at com.mysql.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:4232)
+ 	at com.mysql.jdbc.ConnectionImpl.close(ConnectionImpl.java:1472)
+ 	at Teste2.main(Teste2.java:72)
+ 
+ 
+ ** END NESTED EXCEPTION **
+ 
+ 
+ 
+  ----jGRASP: operation complete.
