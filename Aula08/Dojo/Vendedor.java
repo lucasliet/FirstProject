@@ -11,7 +11,7 @@ public class Vendedor{
       lista = new ArrayList<>();
    }
    
-   public String listarClientes(Connection conn) {
+   public void listarClientes(Connection conn) {
 		String sqlSelect = "SELECT id, nome, fone FROM cliente";
       
 		try (PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
@@ -31,10 +31,12 @@ public class Vendedor{
       catch (SQLException e1) {
 			System.out.print(e1.getStackTrace());
 		}
+	}
+   public String toString(){
       String listagem = "";
 		for(Cliente cliente: lista){
 			listagem += cliente.toString() + "\n";
 		}
 		return listagem;
-	}
+   }
 }
