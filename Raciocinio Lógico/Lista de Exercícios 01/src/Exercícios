@@ -1,0 +1,21 @@
+Lista de Exercícios 01
+
+1) Fazer um programa para realizar o seguinte:
+a) Entrar, via teclado, um valor n.
+b) Calcular a expressão: s = 1 + 2 +...+ n
+
+2) Fazer um programa para realizar o seguinte:
+a) Entrar, via teclado, um valor n.
+b) Calcular a expressão: s = 1/2 + 2/2 +...+ n/2
+
+3) Fazer um programa para realizar o seguinte:
+a) Entrar, via teclado, um valor n.
+b) Calcular a expressão: s = 1/2 + 2/3 + 3/4 +...+ n/(n+1)
+
+4) Fazer um programa para realizar o seguinte:
+a) Entrar, via teclado, um valor n.
+b) Calcular a expressão: s = (1*1) + (2*2) +...+ (n*n)
+
+5) Fazer um programa para realizar o seguinte:
+a) Entrar, via teclado, um valor n.
+b) Calcular expressão: s = (1*1)/2 + (2*2)/3 +...+ (n*n)/(n+1)
