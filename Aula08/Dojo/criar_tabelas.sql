@@ -1,3 +1,4 @@
+DROP DATABASE tutorial;
 CREATE DATABASE tutorial;
 USE tutorial;
 
@@ -29,3 +30,4 @@ INSERT INTO pedido VALUES
 (1404, '2015-10-05', 12.01, 14);
 
 SELECT * FROM CLIENTE C JOIN PEDIDO P ON C.id = P.id_cliente;
+SELECT * FROM cliente;
