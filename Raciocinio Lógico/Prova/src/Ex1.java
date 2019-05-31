@@ -9,7 +9,7 @@ public class Ex1 {
     public static void main(String[] args) {
         int n = Integer.parseInt(JOptionPane.showInputDialog("Digite um valor:"));
         double s = 0;
-        for(int i = 0;i <= n;i++){
+        for(int i = 1;i <= n;i++){
             s += (i+1) / (i*i);
         }
         JOptionPane.showMessageDialog(null, "O resultado da expressão s = 1 + 2 +...+ n é: " + s);
