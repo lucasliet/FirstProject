@@ -14,11 +14,11 @@ public class ConexaoBD {
    }
 
    public Connection conectar() throws SQLException {
-      String servidor = "localhost";
+      String servidor = "marmota.dlinkddns.com";
       String porta = "3306";
       String database = "tutorial";
-      String usuario = "root";
-      String senha = "123456";
+      String usuario ="Alunos";
+      String senha = "alunos2";
       return DriverManager
          	.getConnection("jdbc:mysql://"+servidor+":"+porta+
             "/"+database+"?user="+usuario+"&password="+senha);
